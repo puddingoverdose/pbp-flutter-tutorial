@@ -24,7 +24,7 @@ class _MyFormPageState extends State<MyFormPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Form'),
+        title: const Text('Form'),
       ),
       drawer: Drawer(
         child: Column(
@@ -206,10 +206,6 @@ class _MyFormPageState extends State<MyFormPage> {
                   secondary: const Icon(Icons.run_circle_outlined),
                 ),
                 TextButton(
-                  child: const Text(
-                    "Simpan",
-                    style: TextStyle(color: Colors.white),
-                  ),
                   style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all(Colors.blue),
                   ),
@@ -229,14 +225,14 @@ class _MyFormPageState extends State<MyFormPage> {
                                     const EdgeInsets.only(top: 20, bottom: 20),
                                 shrinkWrap: true,
                                 children: <Widget>[
-                                  Center(child: const Text('Informasi Data')),
+                                  const Center(child: Text('Informasi Data')),
                                   SizedBox(height: 20),
                                   // TODO: Munculkan informasi yang didapat dari form
                                   TextButton(
                                     onPressed: () {
                                       Navigator.pop(context);
                                     },
-                                    child: Text('Kembali'),
+                                    child: const Text('Kembali'),
                                   ),
                                 ],
                               ),
@@ -246,7 +242,12 @@ class _MyFormPageState extends State<MyFormPage> {
                       );
                     }
                   },
+                  child: const Text(
+                    "Simpan",
+                    style: TextStyle(color: Colors.white),
+                  ),
                 ),
+                Text('Judul: $_namaLengkap'),
               ],
             ),
           ),
